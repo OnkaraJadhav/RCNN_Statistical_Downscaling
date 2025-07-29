@@ -1,0 +1,10 @@
+## Libraries required:
+numpy
+xarray
+scikit-learn
+matplotlib
+
+## Installation Steps:
+pip install numpy  
+pip install xarray
+pip install matplotlib
