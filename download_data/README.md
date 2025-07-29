@@ -26,27 +26,27 @@ numpy
 
 You will also need a CDS API key to use the downloader (see below).
 
-# 🔐 Setup: CDS API Key:
+## 🔐 Setup: CDS API Key:
 To authenticate with the Copernicus API:
 
 Register at https://cds.climate.copernicus.eu/
 
 Get your API key from your user profile
 
-# Save it in a file at:
+### Save it in a file at:
 	~/.cdsapirc (Linux/macOS)
 	or
 	C:\\Users\\<you>\\.cdsapirc (Windows)
 
-# Example .cdsapirc:
+### Example .cdsapirc:
 	url: https://cds.climate.copernicus.eu/api/v2
 	key: <uid>:<api_key>
 
 ---
 
-##🛠️ How to Use
+## 🛠️ How to Use
 
-# 📥 1. Download Data
+### 📥 1. Download Data
 
 python era5_downloader.py
 
@@ -55,7 +55,7 @@ You can modify the variables, years, and area inside the script.
 Output:
 → data/era5/raw/era5_<variable>_hourly_<year>.nc
 
-# 📆 2. Convert to Daily Averages
+### 📆 2. Convert to Daily Averages
 
 python era5_hourly_to_daily.py
 
@@ -64,7 +64,8 @@ You can change the frequency of average as per your requirement. But then you mi
 Output:
 → data/era5/daily/era5_<variable>_daily_<year>.nc
 
-🗂️ Output Structure
+### 🗂️ Output Structure
+
 data/
 ├── era5/raw/        # Output from era5_downloader.py
 └── era5/daily/      # Output from era5_hourly_to_daily.py

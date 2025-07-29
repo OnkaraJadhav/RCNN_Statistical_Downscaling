@@ -42,8 +42,8 @@ MLframework/
 │   └── scripts/config.py
 │
 ├── data/                  # Shared data storage (auto-created)
-│   ├── raw/               # Raw NetCDF downloads
-│   ├── daily/             # Optional: daily-averaged NetCDF
+│   ├── era5/raw/          # Raw NetCDF downloads
+│   ├── era5/daily/        # daily-averaged NetCDF
 │   └── processed/         # Final .p files used by model
 │
 └── README.md              # Top-level project overview
@@ -55,8 +55,8 @@ MLframework/
 
 | Step | Folder | Script | Output |
 |------|--------|--------|--------|
-| 1️⃣ Download ERA5 | [`download_data/`](download_data/README.md) | `era5_downloader.py` | `data/raw/*.nc` |
-| 2️⃣ Convert to Daily | [`download_data/`](download_data/README.md) | `era5_hourly_to_daily.py` | `data/daily/*.nc` |
+| 1️⃣ Download ERA5 | [`download_data/`](download_data/README.md) | `era5_downloader.py` | `data/era5/raw/*.nc` |
+| 2️⃣ Convert to Daily | [`download_data/`](download_data/README.md) | `era5_hourly_to_daily.py` | `data/era5/daily/*.nc` |
 | 3️⃣ Interpolate & Format | [`interpolation-engine/`](interpolation-engine/README.md) | `main.py` or `utils/data_generator.py` | `data/processed/Data{year}_gcm.p` |
 | 4️⃣ Train Model | [`rcnn_model/scripts/`](rcnn_model/README.md) | `train.py` | `output/unet_weights.h5` |
 | 5️⃣ Run Inference | [`rcnn_model/scripts/`](rcnn_model/README.md) | `test_full_inference.py` | `output/test_full_results.pkl` |
